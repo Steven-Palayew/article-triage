@@ -3,7 +3,7 @@ import queryString from 'query-string';
 import fetch from 'node-fetch';
 
 import { NCBI_EUTILS_BASE_URL, NCBI_EUTILS_API_KEY } from '../../config';
-import { checkHTTPStatus } from '../../util';
+import { checkHTTPStatus } from '../../util/fetch';
 
 const EUTILS_SEARCH_URL = NCBI_EUTILS_BASE_URL + 'esearch.fcgi';
 const DEFAULT_ESEARCH_PARAMS = {

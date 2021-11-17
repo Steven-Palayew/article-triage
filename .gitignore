@@ -10,3 +10,4 @@ npm-debug.log
 /download/*
 !/download/README
 .vscode
+/data/*
