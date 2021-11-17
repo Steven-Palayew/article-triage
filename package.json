@@ -1,0 +1,17 @@
+{
+  "name": "article-triage",
+  "version": "0.1.0",
+  "description": "Triaging articles for Biofactoid",
+  "main": "index.js",
+  "scripts": {
+    "start": "node -r esm ./src/server"
+  },
+  "author": "jvwong",
+  "license": "MIT",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "lodash": "^4.17.21",
+    "node-fetch": "^3.1.0",
+    "query-string": "^7.0.1"
+  }
+}
