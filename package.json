@@ -4,7 +4,9 @@
   "description": "Triaging articles for Biofactoid",
   "main": "index.js",
   "scripts": {
-    "start": "node -r esm ./src/server"
+    "start": "node -r esm ./src/server",
+    "debug": "node -r esm --inspect ./src/server",
+    "clean": "rimraf data/output/*"
   },
   "author": "jvwong",
   "license": "MIT",
@@ -13,5 +15,8 @@
     "lodash": "^4.17.21",
     "node-fetch": "^2.6.6",
     "query-string": "^7.0.1"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2"
   }
 }

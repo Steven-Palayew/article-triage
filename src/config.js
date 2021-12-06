@@ -20,7 +20,8 @@ const env = (key, defaultVal) => {
 
 export const NODE_ENV = env('NODE_ENV', undefined);
 
-export const DATA_DIR = env('DATA_DIR', 'data');
+export const INPUT_DIR = env('INPUT_DIR', 'data/output');
+export const OUTPUT_DIR = env('OUTPUT_DIR', 'data/output');
 
 // Services
 export const REACH_URL = env('REACH_URL', 'http://reach.baderlab.org/api/uploadFile');

@@ -1,0 +1,194 @@
+[
+  {
+    "title": "Cell Death Differ",
+    "issn": "1476-5403",
+    "volumes": [27],
+    "issues": [7, 12]
+  },
+  {
+    "title": "Cell Death Differ",
+    "issn": "1476-5403",
+    "volumes": [28],
+    "issues": [1, 10]
+  },
+  {
+    "title": "Oncogene",
+    "issn": "1476-5594",
+    "volumes": [39],
+    "issues": [19, 50]
+  },
+  {
+    "title": "Oncogene",
+    "issn": "1476-5594",
+    "volumes": [40],
+    "issues": [1, 43]
+  },
+  {
+    "title": "Sci Signal",
+    "issn": "1937-9145",
+    "volumes": [13],
+    "issues": [630, 663]
+  },
+  {
+    "title": "Sci Signal",
+    "issn": "1937-9145",
+    "volumes": [14],
+    "issues": [664, 706]
+  },
+  {
+    "title": "EMBO Rep",
+    "issn": "1469-3178",
+    "volumes": [21],
+    "issues": [6, 12]
+  },
+  {
+    "title": "EMBO Rep",
+    "issn": "1469-3178",
+    "volumes": [22],
+    "issues": [1, 10]
+  },
+  {
+    "title": "Nat Cell Biol",
+    "issn": "1476-4679",
+    "volumes": [22],
+    "issues": [10, 12]
+  },
+  {
+    "title": "Nat Cell Biol",
+    "issn": "1476-4679",
+    "volumes": [23],
+    "issues": [1, 10]
+  },
+  {
+    "title": "Mol Cell",
+    "issn": "1097-4164",
+    "volumes": [80],
+    "issues": [1, 6]
+  },
+  {
+    "title": "Mol Cell",
+    "issn": "1097-4164",
+    "volumes": [81],
+    "issues": [1, 20]
+  },
+  {
+    "title": "Genes Dev",
+    "issn": "1549-5477",
+    "volumes": [34],
+    "issues": [
+      "19-20",
+      "21-22",
+      "23-24"
+    ]
+  },
+  {
+    "title": "Genes Dev",
+    "issn": "1549-5477",
+    "volumes": [35],
+    "issues": [
+      "1-2",
+      "3-4",
+      "5-6",
+      "7-8",
+      "9-10",
+      "11-12",
+      "13-14",
+      "15-16",
+      "17-18",
+      "19-20"
+    ]
+  },
+  {
+    "title": "J Cell Biol",
+    "issn": "1540-8140",
+    "volumes": [219],
+    "issues": [5, 12]
+  },
+  {
+    "title": "J Cell Biol",
+    "issn": "1540-8140",
+    "volumes": [220],
+    "issues": [1, 11]
+  },
+  {
+    "title": "J Biol Chem",
+    "issn": "0021-9258",
+    "volumes": [295],
+    "issues": [38, 52]
+  },
+  {
+    "title": "J Biol Chem",
+    "issn": "0021-9258",
+    "volumes": [296],
+    "issues": []
+  },
+  {
+    "title": "J Biol Chem",
+    "issn": "0021-9258",
+    "volumes": [297],
+    "issues": [1, 3]
+  },
+  {
+    "title": "Cell Rep",
+    "issn": "2211-1247",
+    "volumes": [32],
+    "issues": [12, 13]
+  },
+  {
+    "title": "Cell Rep",
+    "issn": "2211-1247",
+    "volumes": [33, 34, 35],
+    "issues": [1, 13]
+  },
+  {
+    "title": "Cell Rep",
+    "issn": "2211-1247",
+    "volumes": [36],
+    "issues": [1, 7]
+  },
+  {
+    "title": "J Exp Med",
+    "issn": "1540-9538",
+    "volumes": [217],
+    "issues": [7, 12]
+  },
+  {
+    "title": "J Exp Med",
+    "issn": "1540-9538",
+    "volumes": [218],
+    "issues": [1, 8]
+  },
+  {
+    "title": "PLoS Biol",
+    "issn": "1545-7885",
+    "volumes": [18],
+    "issues": [5, 12]
+  },
+  {
+    "title": "PLoS Biol",
+    "issn": "1545-7885",
+    "volumes": [19],
+    "issues": [1, 4]
+  },
+  {
+    "title": "Nuc Acid Res",
+    "issn": "1362-4962",
+    "volumes": [48],
+    "issues": [10, 22]
+  },
+  {
+    "title": "Nuc Acid Res",
+    "issn": "1362-4962",
+    "volumes": [49],
+    "issues": [1, 14]
+  },
+  {
+    "title": "eLife",
+    "issn": "2050-084X",
+    "volumes": [9, 10],
+    "dates": [
+      "2020/05/01",
+      "2021/05/01"
+    ]
+  }
+]

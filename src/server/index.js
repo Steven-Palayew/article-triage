@@ -3,14 +3,13 @@ import fs from 'fs';
 import path from 'path';
 import util from 'util';
 
-import { DATA_DIR } from '../config';
+import { INPUT_DIR, OUTPUT_DIR } from '../config';
 import { searchPubmed } from './pubmed/searchPubmed';
+import journal_data from '../../data/input/journal_data.json';
 
+const appendFile = util.promisify( fs.appendFile );
 
-const writeFile = util.promisify( fs.writeFile );
-
-
-const search = ({ issn, volume, issue }) => {
+const search = ({ issn, volume, issue, dates }) => {
   let baseTerm = `${issn}[IS] AND ${volume}[VI]`;
   let issueTerm = `${issue}[IP]`;
   let pubTypes = [
@@ -33,21 +32,46 @@ const search = ({ issn, volume, issue }) => {
   const opts = {
     retmax: 10000
   };
+
+  if ( dates ) {
+    _.assign( opts, {
+      mindate: dates[0],
+      maxdate: dates[1],
+      datetype: 'pdat'
+    });
+  }
   return searchPubmed( term, opts );
 };
 
-const getPmidsForJournal = async ({ issn, volumes, issues }) => {
+const normalizeIssues = issues => {
+  let result = issues;
+  const isInteger = q => Number.isInteger( q );
+
+  const hasIssues = !_.isNil( issues ) && !_.isEmpty( issues );
+  const isRange = hasIssues && issues.length === 2 && isInteger( issues[0] ) && isInteger( issues[1] );
+
+  if( isRange ){
+    result = _.range( issues[0], issues[1] + 1 );
+  }
+
+  return result;
+};
+
+const getPmidsForJournal = async ({ issn, volumes, issues, dates }) => {
   const ids = new Set();
+
+  const normalIssues = normalizeIssues( issues );
+
   for ( const volume of volumes ){
 
-    if( issues.length ){
-      for ( const issue of issues ){
-        let { searchHits } = await search( { issn, volume, issue } );
+    if( normalIssues && normalIssues.length ){
+      for ( const issue of normalIssues ){
+        let { searchHits } = await search( { issn, volume, issue, dates } );
         searchHits.forEach( ids.add, ids );
       }
 
     } else {
-      let { searchHits } = await search( { issn, volume } );
+      let { searchHits } = await search( { issn, volume, dates } );
       searchHits.forEach( ids.add, ids );
     }
   }
@@ -55,29 +79,22 @@ const getPmidsForJournal = async ({ issn, volumes, issues }) => {
   return ids;
 };
 
-const writeToFile = async ( fileName, data ) => {
-  const filePath = path.join( DATA_DIR, fileName );
+const appendToFile = async ( fileName, data ) => {
+  const filePath = path.join( OUTPUT_DIR, fileName );
   try {
-    await writeFile( filePath, data );
+    await appendFile( filePath, data );
   } catch ( err ){
     console.error( err );
   }
 };
 
-//    with open('{issn}.txt'.format(issn=journal), 'a') as f:
-//      for item in ids:
-//        f.write('{item}\n'.format(item=item))
-
 const main = async () => {
-  const issn = '1476-5403';
-  const data1 = {
-    issn,
-    volumes: [27],
-    issues: _.range( 7, 13 )
-  };
-  const ids = await getPmidsForJournal( data1 );
-  console.log( [...ids] );
-  await writeToFile( `${issn}.txt`, JSON.stringify([...ids]) );
+
+  for ( const datum of journal_data ) {
+    const ids = await getPmidsForJournal( datum );
+    await appendToFile( `all_ids.txt`, [...ids].map(JSON.stringify).join('\n').concat("\n") );
+  }
+
 };
 
 main();
